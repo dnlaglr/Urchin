@@ -6,7 +6,7 @@ OBJPATH := $(BINPATH)/objs
 SRCPATH := cli/*.cpp
 
 SOURCES := $(wildcard $(SRCPATH))
-OBJECTS := $(patsubst %.cpp, $(OBJPATH)/%.o, $(SOURCES))
+OBJECTS := $(patsubst %.cpp, $(OBJPATH)/%.o, $(notdir $(SOURCES)))
 
 EXECUTABLE := $(BINPATH)/urchin
 
