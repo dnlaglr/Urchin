@@ -3,7 +3,8 @@ CXXFLAGS = -Wall -Wextra -g -std=c++17
 
 BINPATH := bin
 OBJPATH := $(BINPATH)/objs
-SRCPATH := cli/*.cpp
+SRCPATH := cli/*.cpp cli/commands/*.cpp
+INCPATH := -Icli/commands
 
 SOURCES := $(wildcard $(SRCPATH))
 OBJECTS := $(patsubst %.cpp, $(OBJPATH)/%.o, $(notdir $(SOURCES)))
@@ -20,6 +21,10 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 $(OBJPATH)/%.o: cli/%.cpp
+	@mkdir -p $(OBJPATH)
+	$(CXX) $(CXXFLAGS) $(INCPATH) -c $< -o $@
+
+$(OBJPATH)/%.o: cli/commands/%.cpp
 	@mkdir -p $(OBJPATH)
 	$(CXX) $(CXXFLAGS) $(INCPATH) -c $< -o $@
 
