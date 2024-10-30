@@ -43,7 +43,19 @@ void UrchinCLI::GraphCommand::execute() {
   UrchinCore::Timer cmdTimer("Graph Command");
 #endif // URCHIN_DEBUG
 
-  findDependencies(_filePath);
+  /* If no filePath argument is provided, Urchin will perform a recursive search from where the command was called. */
+  if (_filePath.empty()) {
+    for (const auto &entry : std::filesystem::recursive_directory_iterator(std::filesystem::current_path())) {
+      if (entry.is_regular_file()) {
+        auto path = entry.path();
+        if (path.extension() == ".h" || path.extension() == ".hpp" || path.extension() == ".cpp") {
+          findDependencies(path.string());
+        }
+      }
+    }
+  } else {
+    findDependencies(_filePath);
+  }
 
   std::cout << "[\n";
   for (const auto &entry : _dependencies) {
