@@ -7,12 +7,17 @@
 #include <string>
 #include <unordered_map>
 
+#include "../../core/logger.h"
+
 namespace UrchinCLI {
 
 class Command {
 public:
   virtual ~Command() = default;
   virtual void execute() = 0;
+
+protected:
+  UrchinCore::Logger _logger;
 };
 
 class CommandParser {
