@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -g -std=c++17
 BINPATH := bin
 OBJPATH := $(BINPATH)/objs
 SRCPATH := cli/*.cpp cli/commands/*.cpp
-INCPATH := -Icli/commands
+INCPATH := -Icli/commands -Icore/
 
 SOURCES := $(wildcard $(SRCPATH))
 OBJECTS := $(patsubst %.cpp, $(OBJPATH)/%.o, $(notdir $(SOURCES)))
