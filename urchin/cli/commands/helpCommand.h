@@ -18,9 +18,9 @@ public:
 
     std::cout << "\nUrchin - C++ Dependency Grapher\n\n"
       << "help - Gives general help information about all available commands\n"
+      << "help [command] - Gives detailed information about a specific command\n"
       << "graph - Graphs dependencies from program entry file\n"
-      << "graph <path> - Graphs dependencies relative to specified file\n"
-      << "[command] help - Gives detailed information about a specific command\n" <<
+      << "graph <path> - Graphs dependencies relative to specified file\n" <<
     std::endl;
   
   #ifdef URCHIN_DEBUG
