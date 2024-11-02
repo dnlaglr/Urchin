@@ -5,6 +5,7 @@ An open-source CLI & GUI visualizer for your C/C++ project dependencies.
 - [About](#about)
 - [How to Build](#how-to-build)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## About
 **Urchin** is an open-source C++ project designed to provide a comprehensive overview of your project dependencies and how they link together. 
@@ -34,7 +35,8 @@ make gui # Builds GUI only
 **Urchin** is currently only compatible with Unix-based systems! Any contributions to expand Urchin's uses or compatible systems is greatly appreciated.
 
 > [!IMPORTANT]
-> Any feedback on features, bugs, or suggestions for enhancements are instrumental to Urchin's development! If you have an idea please feel free to contribute by submitting an issue or creating a pull request.
+> Any feedback on features, bugs, or suggestions for enhancements are instrumental to Urchin's development! 
+> If you have an idea please feel free to contribute by submitting an issue or creating a pull request.
 
 ## License
 Urchin is distributed under the MIT license. You can review the full license agreement [here.](LICENSE.md)
