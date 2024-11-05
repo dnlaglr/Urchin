@@ -2,7 +2,7 @@
 
 OPSYS="$(uname -s)"
 BINDIR="/usr/local/bin"
-URCHINBIN="urchin/bin/urchin"
+URCHINBIN="urchin/bin/urchinCLI"
 
 addToPath() {
   SHELLCONFIG="$HOME/.bashrc"
